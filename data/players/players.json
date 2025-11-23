@@ -1,28 +1,28 @@
 {
-  "player": [
+  "players": [
     {
-      "player_id": "stepan",
+      "id": "stepan",
       "name": "Степан Дубина",
       "hp": 10,
       "desc": "Вы в расцвете сил, амбициозны, имеете крепкое телосложение. Для вас не существует никаких препятствий. Ну, кроме финансовых, с этим у вас проблемы.",
-      "weapon": "dangerous_cudgel",
-      "armor": "light_leather_armor"
+      "weapon_id": "dangerous_cudgel",
+      "armor_id": "light_leather_armor"
     },
     {
-      "player_id": "ciceron",
+      "id": "ciceron",
       "name": "Цицерон Иванович",
       "hp": 10,
       "desc": "Вам за 50 лет, по местным меркам - глубокая старость. Но несбывшиеся мечты молодости толкают вас на авантюры.",
-      "weapon": "dangerous_cudgel",
-      "armor": "light_leather_armor"
+      "weapon_id": "dangerous_cudgel",
+      "armor_id": "light_leather_armor"
     },
     {
-      "player_id": "vaska_prankster",
+      "id": "vaska_prankster",
       "name": "Васька Проказник",
       "hp": 10,
       "desc": "Вы сирота, живущая на улице. Единственный способ улучшить свою жизнь для вас, это найти что-то ценное в опасных и заброшенных местах.",
-      "weapon": "dangerous_cudgel",
-      "armor": "light_leather_armor"
+      "weapon_id": "dangerous_cudgel",
+      "armor_id": "light_leather_armor"
     }
   ],
   "death_texts": [
