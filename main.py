@@ -1,30 +1,14 @@
-from game.dungeon.dungeon import create_dungeon
-
-
-def print_dungeon_pretty(rooms, player):
-    """Красивый игровой вывод подземелья."""
-    print(f"🗡️ ИГРОК: {player.name} (HP: {player.hp}/{player.max_hp})")
-    print("=" * 60)
-
-    for room in rooms:
-        # Иконки
-        prefix = "🚪 " if room.is_start else "🔥 " if room.has_alive_enemy else "🕳️ "
-        suffix = " 🏁" if room.is_exit else ""
-
-        # Враг
-        if room.has_alive_enemy:
-            enemy_info = f"⚔️ Есть враг! {room.enemy.name} (HP: {room.enemy.hp}/{room.enemy.max_hp})"
-        else:
-            enemy_info = "Пусто"
-
-        print(f"{prefix}Комната {room.index + 1}{suffix}")
-        print(f"   {room.description}")
-        print(f"   {enemy_info}")
-        print("-" * 40)
+from core.dungeon import Dungeon
+from core.controller import GameController
 
 
 if __name__ == "__main__":
-    rooms, player = create_dungeon(5, 1)
-    print_dungeon_pretty(rooms, player)
+    # Генерация
+    dungeon = Dungeon(7, 3)
+    game_map, rooms, player = dungeon.build()
 
-
+    # Запуск игры
+    controller = GameController(game_map, rooms, player)
+    result = controller.run()
+    if result:
+        print(f"\n{result}")
