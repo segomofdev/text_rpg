@@ -1,0 +1,11 @@
+{
+  "weapons": [
+    {
+      "id": "dangerous_cudgel",
+      "title": "Опасная дубина",
+      "description": "крепкая сосновая ветка с вбитым ржавым гвоздем на конце.",
+      "damage": 5,
+      "hit_chance": 75
+    }
+  ]
+}
