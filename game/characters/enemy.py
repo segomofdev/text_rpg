@@ -1,14 +1,15 @@
-from .base import Character
+from .base import Character, Weapon, Armor
 
 
 class Enemy(Character):
-    def __init__(self, name: str, hp: int, description: str, death_text: str, weapon_id: str, armor_id: str):
-        super().__init__(name, hp, weapon_id, armor_id)
-        self.description = description
-        self.death_text = death_text
+    def __init__(self, name: str, hp: int, desc: str, death_text: str, weapon: Weapon, armor: Armor):
+        super().__init__(name, hp, weapon, armor)
+        self.desc = desc
+        self.death_text = death_text or "Противник повержен!"
 
     def on_death(self) -> None:
+        """Выводит текст смерти врага."""
         print(f"{self.name} пал! {self.death_text}")
 
-    def __str__(self):
-        return f"{self.name} (HP: {self.hp}/{self.max_hp}) — {self.description}"
+    def __str__(self) -> str:
+        return f"{self.name} (HP: {self.hp}/{self.max_hp}) — {self.desc}, \n'Оружие': {self.weapon}\n'Броня'{self.armor}'"
