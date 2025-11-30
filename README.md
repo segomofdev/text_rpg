@@ -1,5 +1,5 @@
 ### Простая текстовая консольная RPG
-**Python 3.10.11 | pytest 9.0.1**
+- **Python 3.10.11 | pytest 9.0.1**
 ## ✅ Выполнено по ТЗ
 
 | Пункт ТЗ | Статус                                  |
@@ -9,14 +9,14 @@
 | **Автобой** | ✅ По формуле ТЗ: `max(0, damage-armor)` |
 | **Тесты** | ✅ 16 тестов, 100% критичной логики      |
 ## 🚀 Запуск
-pip install -r requirements.txt
-python main.py
+- git clone https://github.com/segomofdev/text_rpg.git
+- pip install -r requirements.txt
+- python main.py
 ## 🧪 Тестирование
-pytest -v
-**16 passed in 0.07s**
+- pytest -v
+- **16 passed in 0.07s**
 
 ## 📝 Технические решения
-
 - **SOLID/DRY**: Разделение `Dungeon` (генерация) / `Controller` (цикл) / `AutoBattle` (бой)
 - **JSON**: `data/rooms.json`, `enemies/{weapons,armor}.json`, `results.json`
 - **Случайность**: `random.choice` + `DummyRandom` в тестах
