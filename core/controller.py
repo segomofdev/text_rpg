@@ -16,6 +16,7 @@ class GameController:
         self.rooms = rooms
         self.player = player
         self.current_room_index = 0  # начинаем со St
+        self.exited = False
 
     def _input(self, prompt: str) -> str:
         """Общий ввод с поддержкой exit/quit в любой момент."""
@@ -33,7 +34,7 @@ class GameController:
         print("=" * 200)
 
         try:
-            while self.player.is_alive:
+            while self.player.is_alive and not self.exited:
                 if not (0 <= self.current_room_index < len(self.rooms)):
                     break
 
@@ -55,6 +56,9 @@ class GameController:
 
         print(f"\n🚪 Комната {self.current_room_index + 1}:")
         print(f"   {room.description}")
+
+        if room.is_exit:
+            print("🔚 Это выход из подземелья!")
 
         if room.has_alive_enemy:
             enemy = room.enemy
@@ -128,6 +132,7 @@ class GameController:
 
         elif action == 4:  # Выйти
             print("🎉 Выход из подземелья!")
+            self.exited = True
 
     def _get_game_result(self) -> str:
         """Результат игры."""
